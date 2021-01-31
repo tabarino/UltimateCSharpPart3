@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Generics\Generics.csproj" />
     <ProjectReference Include="..\Delegates\Delegates.csproj" />
+    <ProjectReference Include="..\LambdaExpressions\LambdaExpressions.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

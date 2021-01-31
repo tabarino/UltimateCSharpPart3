@@ -1,6 +1,7 @@
 ﻿using System;
 using Generics;
 using Delegates;
+using LambdaExpressions;
 
 namespace UltimateCSharpPart3
 {
@@ -10,7 +11,9 @@ namespace UltimateCSharpPart3
         {
             // Generics();
 
-            Delegates();
+            // Delegates();
+
+            LambdaExpressions();
         }
 
         static void Generics()
@@ -68,6 +71,27 @@ namespace UltimateCSharpPart3
             filterHandler += newFilters.RemoveRedEye;
 
             processor.Process("photo.jpg", filterHandler);
+        }
+
+        static void LambdaExpressions()
+        {
+            var lambdaExamples = new LambdaExamples();
+
+            var books = new LambdaExpressions.Book();
+            var bookRepository = new BookRepository().GetBooks();
+
+            var cheapBooks = bookRepository.FindAll(books.IsCheaperThanTenDollars);
+            foreach (var book in cheapBooks)
+            {
+                Console.WriteLine(book.Title);
+            }
+
+            // This Lambda Expression is exactly the same as the above code
+            var cheapBooksLambda = bookRepository.FindAll(book => book.Price < 10);
+            foreach (var book in cheapBooksLambda)
+            {
+                Console.WriteLine(book.Title);
+            }
         }
     }
 }
