@@ -1,5 +1,6 @@
 ﻿using System;
 using Generics;
+using Delegates;
 
 namespace UltimateCSharpPart3
 {
@@ -7,7 +8,9 @@ namespace UltimateCSharpPart3
     {
         static void Main(string[] args)
         {
-            Generics();
+            // Generics();
+
+            Delegates();
         }
 
         static void Generics()
@@ -40,6 +43,31 @@ namespace UltimateCSharpPart3
             var number2 = new Generics.Nullable<int>();
             Console.WriteLine($"Has Value ? {number2.HasValue}");
             Console.WriteLine($"Value: {number2.getValueOrDefault()}");
+        }
+
+        static void Delegates()
+        {
+            // Delegates are objects that knows how to call a method (or a group of methods)
+            // It is also a reference to a function
+            // We use delegates to achieve extensibility and flexibility (eg.: frameworks)
+
+            // Interfaces or Delegates???
+            // Use a Delegate when:
+            // - An eventing design pattern is used
+            // - The caller doesn't need to access other properties or methods on the object implementing the method
+
+            var processor = new PhotoProcessor();
+            var filters = new PhotoFilters();
+            var newFilters = new NewPhotoFilters();
+
+            // Dotnet has its own delegates. So, we do not need to create ours
+            // PhotoProcessor.PhotoFilterHandler filterHandler = filters.ApplyBrightness;
+            Action<Photo> filterHandler = filters.ApplyBrightness;
+            filterHandler += filters.ApplyContrast;
+            filterHandler += filters.Resize;
+            filterHandler += newFilters.RemoveRedEye;
+
+            processor.Process("photo.jpg", filterHandler);
         }
     }
 }

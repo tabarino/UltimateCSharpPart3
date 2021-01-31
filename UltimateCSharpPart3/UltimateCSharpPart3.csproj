@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Generics\Generics.csproj" />
+    <ProjectReference Include="..\Delegates\Delegates.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
