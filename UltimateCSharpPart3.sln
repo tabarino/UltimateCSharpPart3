@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LambdaExpressions", "Lambda
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsAndDelegates", "EventsAndDelegates\EventsAndDelegates.csproj", "{862EEF5E-7167-477C-A0A6-17B2F75D7301}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionMethods", "ExtensionMethods\ExtensionMethods.csproj", "{4988F55A-DAEE-4857-8AD7-0F87E3D87204}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,5 +88,17 @@ Global
 		{862EEF5E-7167-477C-A0A6-17B2F75D7301}.Release|x64.Build.0 = Release|Any CPU
 		{862EEF5E-7167-477C-A0A6-17B2F75D7301}.Release|x86.ActiveCfg = Release|Any CPU
 		{862EEF5E-7167-477C-A0A6-17B2F75D7301}.Release|x86.Build.0 = Release|Any CPU
+		{4988F55A-DAEE-4857-8AD7-0F87E3D87204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4988F55A-DAEE-4857-8AD7-0F87E3D87204}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4988F55A-DAEE-4857-8AD7-0F87E3D87204}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4988F55A-DAEE-4857-8AD7-0F87E3D87204}.Debug|x64.Build.0 = Debug|Any CPU
+		{4988F55A-DAEE-4857-8AD7-0F87E3D87204}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4988F55A-DAEE-4857-8AD7-0F87E3D87204}.Debug|x86.Build.0 = Debug|Any CPU
+		{4988F55A-DAEE-4857-8AD7-0F87E3D87204}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4988F55A-DAEE-4857-8AD7-0F87E3D87204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4988F55A-DAEE-4857-8AD7-0F87E3D87204}.Release|x64.ActiveCfg = Release|Any CPU
+		{4988F55A-DAEE-4857-8AD7-0F87E3D87204}.Release|x64.Build.0 = Release|Any CPU
+		{4988F55A-DAEE-4857-8AD7-0F87E3D87204}.Release|x86.ActiveCfg = Release|Any CPU
+		{4988F55A-DAEE-4857-8AD7-0F87E3D87204}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -3,6 +3,9 @@ using Generics;
 using Delegates;
 using LambdaExpressions;
 using EventsAndDelegates;
+// using ExtensionMethods;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace UltimateCSharpPart3
 {
@@ -16,7 +19,9 @@ namespace UltimateCSharpPart3
 
             // LambdaExpressions();
 
-            EventsAndDelegates();
+            // EventsAndDelegates();
+
+            ExtensionMethods();
         }
 
         static void Generics()
@@ -113,6 +118,25 @@ namespace UltimateCSharpPart3
             videoEncoder.VideoEncoded += messageService.OnVideoEncoded;
 
             videoEncoder.Encode(video);
+        }
+
+        static void ExtensionMethods()
+        {
+            // Note: Extension Methods can be trick. If the owner of the class creates a method called Shorten.
+            // This code won't work anymore.
+            // So, use Extension Methods only if you really need to.
+
+            string post = "This is supposed to be a very long blog post. blah blah blah.";
+            var shortenedPost = post.Shorten(5);
+
+            Console.WriteLine(shortenedPost);
+
+            // The "Max" is a Extension Method that C# sends OOTB on System.Linq
+            // Most of the time, we'll use Extension Methods from C# and not creating our own.
+            IEnumerable<int> numbers = new List<int>() { 1, 2, 3 };
+            var max = numbers.Max();
+
+            Console.WriteLine(max);
         }
     }
 }
