@@ -2,6 +2,7 @@
 using Generics;
 using Delegates;
 using LambdaExpressions;
+using EventsAndDelegates;
 
 namespace UltimateCSharpPart3
 {
@@ -13,7 +14,9 @@ namespace UltimateCSharpPart3
 
             // Delegates();
 
-            LambdaExpressions();
+            // LambdaExpressions();
+
+            EventsAndDelegates();
         }
 
         static void Generics()
@@ -92,6 +95,24 @@ namespace UltimateCSharpPart3
             {
                 Console.WriteLine(book.Title);
             }
+        }
+
+        static void EventsAndDelegates()
+        {
+            var video = new Video() { Title = "Video 1" };
+            
+            // Publisher
+            var videoEncoder = new VideoEncoder();
+
+            // Subscribers
+            var mailService = new MailService();
+            var messageService = new MessageService();
+
+            // Subscriptions
+            videoEncoder.VideoEncoded += mailService.OnVideoEncoded;
+            videoEncoder.VideoEncoded += messageService.OnVideoEncoded;
+
+            videoEncoder.Encode(video);
         }
     }
 }
