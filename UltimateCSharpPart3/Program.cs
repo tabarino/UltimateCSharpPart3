@@ -7,6 +7,7 @@ using LambdaExpressions;
 using EventsAndDelegates;
 // using ExtensionMethods;
 using Linq;
+using NullableTypes;
 
 namespace UltimateCSharpPart3
 {
@@ -24,7 +25,9 @@ namespace UltimateCSharpPart3
 
             // ExtensionMethods();
 
-            Linq();
+            // Linq();
+
+            NullableTypes();
         }
 
         static void Generics()
@@ -213,6 +216,11 @@ namespace UltimateCSharpPart3
 
             var averagePrice = books.Average(b => b.Price);
             Console.WriteLine(averagePrice);
+        }
+
+        static void NullableTypes()
+        {
+            var nullableExamples = new NullableExamples();
         }
     }
 }
