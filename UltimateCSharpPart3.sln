@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsAndDelegates", "Event
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionMethods", "ExtensionMethods\ExtensionMethods.csproj", "{4988F55A-DAEE-4857-8AD7-0F87E3D87204}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq", "Linq\Linq.csproj", "{3B7F71A6-F443-4836-901C-58A566E463EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,5 +102,17 @@ Global
 		{4988F55A-DAEE-4857-8AD7-0F87E3D87204}.Release|x64.Build.0 = Release|Any CPU
 		{4988F55A-DAEE-4857-8AD7-0F87E3D87204}.Release|x86.ActiveCfg = Release|Any CPU
 		{4988F55A-DAEE-4857-8AD7-0F87E3D87204}.Release|x86.Build.0 = Release|Any CPU
+		{3B7F71A6-F443-4836-901C-58A566E463EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B7F71A6-F443-4836-901C-58A566E463EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B7F71A6-F443-4836-901C-58A566E463EE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3B7F71A6-F443-4836-901C-58A566E463EE}.Debug|x64.Build.0 = Debug|Any CPU
+		{3B7F71A6-F443-4836-901C-58A566E463EE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3B7F71A6-F443-4836-901C-58A566E463EE}.Debug|x86.Build.0 = Debug|Any CPU
+		{3B7F71A6-F443-4836-901C-58A566E463EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B7F71A6-F443-4836-901C-58A566E463EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B7F71A6-F443-4836-901C-58A566E463EE}.Release|x64.ActiveCfg = Release|Any CPU
+		{3B7F71A6-F443-4836-901C-58A566E463EE}.Release|x64.Build.0 = Release|Any CPU
+		{3B7F71A6-F443-4836-901C-58A566E463EE}.Release|x86.ActiveCfg = Release|Any CPU
+		{3B7F71A6-F443-4836-901C-58A566E463EE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

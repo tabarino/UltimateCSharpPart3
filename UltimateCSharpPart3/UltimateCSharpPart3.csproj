@@ -6,6 +6,7 @@
     <ProjectReference Include="..\LambdaExpressions\LambdaExpressions.csproj" />
     <ProjectReference Include="..\EventsAndDelegates\EventsAndDelegates.csproj" />
     <ProjectReference Include="..\ExtensionMethods\ExtensionMethods.csproj" />
+    <ProjectReference Include="..\Linq\Linq.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

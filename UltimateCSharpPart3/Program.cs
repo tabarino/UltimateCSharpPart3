@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Generics;
 using Delegates;
 using LambdaExpressions;
 using EventsAndDelegates;
 // using ExtensionMethods;
-using System.Collections.Generic;
-using System.Linq;
+using Linq;
 
 namespace UltimateCSharpPart3
 {
@@ -21,7 +22,9 @@ namespace UltimateCSharpPart3
 
             // EventsAndDelegates();
 
-            ExtensionMethods();
+            // ExtensionMethods();
+
+            Linq();
         }
 
         static void Generics()
@@ -86,7 +89,7 @@ namespace UltimateCSharpPart3
             var lambdaExamples = new LambdaExamples();
 
             var books = new LambdaExpressions.Book();
-            var bookRepository = new BookRepository().GetBooks();
+            var bookRepository = new LambdaExpressions.BookRepository().GetBooks();
 
             var cheapBooks = bookRepository.FindAll(books.IsCheaperThanTenDollars);
             foreach (var book in cheapBooks)
@@ -105,7 +108,7 @@ namespace UltimateCSharpPart3
         static void EventsAndDelegates()
         {
             var video = new Video() { Title = "Video 1" };
-            
+
             // Publisher
             var videoEncoder = new VideoEncoder();
 
@@ -137,6 +140,79 @@ namespace UltimateCSharpPart3
             var max = numbers.Max();
 
             Console.WriteLine(max);
+        }
+
+        static void Linq()
+        {
+            var books = new Linq.BookRepository().GetBooks();
+
+            // LINQ Query Operators
+            // var cheapBooks = from b in books
+            //     where b.Price < 10
+            //     orderby b.Title
+            //     select b.Title;
+
+            // LINQ Extension Methods (This is a more used syntax and it is also more powerful)
+            // var cheapBooks = books
+            //     .Where(b => b.Price < 10)
+            //     .OrderBy(b => b.Title)
+            //     .Select(b => b.Title);
+
+            // foreach (var cheapBook in cheapBooks)
+            // {
+                // Console.WriteLine($"{cheapBook.Title} - € {cheapBook.Price}");
+                // Console.WriteLine(cheapBook);
+            // }
+
+            // var book = books.Single(b => b.Title == "ASP.NET MVC");
+            // Console.WriteLine(book.Title);
+
+            // This is safer than Single
+            // var book = books.SingleOrDefault(b => b.Title == "ASP.NET MVC++");
+            // if (book != null)
+            // {
+            //     Console.WriteLine(book.Title);
+            // }
+
+            // var book = books.First(b => b.Title == "C# Advanced Topics");
+            // Console.WriteLine($"{book.Title} - € {book.Price}");
+
+            // This is safer than First
+            // var book = books.FirstOrDefault(b => b.Title == "C#++ Advanced Topics");
+            // if (book != null)
+            // {
+            //     Console.WriteLine(book.Title);
+            // }
+
+            // var book = books.Last(b => b.Title == "C# Advanced Topics");
+            // Console.WriteLine($"{book.Title} - € {book.Price}");
+
+            // This is safer than Last
+            // var book = books.LastOrDefault(b => b.Title == "C#++ Advanced Topics");
+            // if (book != null)
+            // {
+            //     Console.WriteLine(book.Title);
+            // }
+
+            // var pagedBooks = books.Skip(2).Take(3);
+            // foreach (var pagedBook in pagedBooks)
+            // {
+            //     Console.WriteLine($"{pagedBook.Title} - € {pagedBook.Price}");
+            // }
+
+            var count = books.Count();
+            Console.WriteLine(count);
+
+            var maxPrice = books.Max(b => b.Price);
+            var minPrice = books.Min(b => b.Price);
+            Console.WriteLine(maxPrice);
+            Console.WriteLine(minPrice);
+
+            var totalPrice = books.Sum(b => b.Price);
+            Console.WriteLine(totalPrice);
+
+            var averagePrice = books.Average(b => b.Price);
+            Console.WriteLine(averagePrice);
         }
     }
 }
