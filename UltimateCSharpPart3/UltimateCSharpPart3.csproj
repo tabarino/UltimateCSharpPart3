@@ -9,6 +9,7 @@
     <ProjectReference Include="..\Linq\Linq.csproj" />
     <ProjectReference Include="..\NullableTypes\NullableTypes.csproj" />
     <ProjectReference Include="..\Dynamic\Dynamic.csproj" />
+    <ProjectReference Include="..\ExceptionHandling\ExceptionHandling.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

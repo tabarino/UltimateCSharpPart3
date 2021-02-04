@@ -9,6 +9,8 @@ using EventsAndDelegates;
 using Linq;
 using NullableTypes;
 using Dynamic;
+using ExceptionHandling;
+using System.IO;
 
 namespace UltimateCSharpPart3
 {
@@ -30,7 +32,9 @@ namespace UltimateCSharpPart3
 
             // NullableTypes();
 
-            Dynamic();
+            // Dynamic();
+
+            ExceptionHandling();
         }
 
         static void Generics()
@@ -113,7 +117,7 @@ namespace UltimateCSharpPart3
 
         static void EventsAndDelegates()
         {
-            var video = new Video() { Title = "Video 1" };
+            var video = new EventsAndDelegates.Video() { Title = "Video 1" };
 
             // Publisher
             var videoEncoder = new VideoEncoder();
@@ -229,6 +233,76 @@ namespace UltimateCSharpPart3
         static void Dynamic()
         {
             var dynamicExamples = new DynamicExamples();
+        }
+
+        static void ExceptionHandling()
+        {
+            // Normal Exception Handling with many Exceptions
+            // try
+            // {
+            //     var calculator = new Calculator();
+            //     var result = calculator.Divide(5, 0);   
+            // }
+            // catch (DivideByZeroException ex)
+            // {
+            //     Console.WriteLine($"DivideByZeroException: {ex.Message}");
+            // }
+            // catch (ArithmeticException ex)
+            // {
+            //     Console.WriteLine($"ArithmeticException: {ex.Message}");
+            // }
+            // catch (Exception ex)
+            // {
+            //     Console.WriteLine($"Sorry, an exception error occurred - {ex.Message}");
+            // }
+
+
+            // Example with Finally
+            // StreamReader streamReader = null;
+            // try
+            // {
+            //     streamReader = new StreamReader("/Users/itabarino/Downloads/test123.txt");
+            //     var content = streamReader.ReadToEnd();
+            //     Console.WriteLine(content);
+            // }
+            // catch (Exception ex)
+            // {
+            //     Console.WriteLine($"Sorry, an exception error occurred - {ex.Message}");
+            // }
+            // finally
+            // {
+            //     if (streamReader != null)
+            //     {
+            //         streamReader.Dispose();
+            //     }
+            // }
+
+            // Instead of using Finally, simple use the "using". It will create finally under the hook for you
+            // try
+            // {
+            //     using (var streamReader = new StreamReader("/Users/itabarino/Downloads/test123.txt"))
+            //     {
+            //         var content = streamReader.ReadToEnd();
+            //         Console.WriteLine(content);
+            //     }
+            // }
+            // catch (Exception ex)
+            // {
+            //     Console.WriteLine($"Sorry, an exception error occurred - {ex.Message}");
+            // }
+
+
+            // Custom Exceptions
+            try
+            {
+                var api = new YoutubeApi();
+                api.GetVideos("TestApi");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Sorry, an exception error occurred - {ex.Message}");
+                Console.WriteLine(ex.InnerException.Message);
+            }
         }
     }
 }
