@@ -8,6 +8,7 @@ using EventsAndDelegates;
 // using ExtensionMethods;
 using Linq;
 using NullableTypes;
+using Dynamic;
 
 namespace UltimateCSharpPart3
 {
@@ -27,7 +28,9 @@ namespace UltimateCSharpPart3
 
             // Linq();
 
-            NullableTypes();
+            // NullableTypes();
+
+            Dynamic();
         }
 
         static void Generics()
@@ -221,6 +224,11 @@ namespace UltimateCSharpPart3
         static void NullableTypes()
         {
             var nullableExamples = new NullableExamples();
+        }
+
+        static void Dynamic()
+        {
+            var dynamicExamples = new DynamicExamples();
         }
     }
 }

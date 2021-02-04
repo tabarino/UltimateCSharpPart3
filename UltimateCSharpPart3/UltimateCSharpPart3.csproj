@@ -8,6 +8,7 @@
     <ProjectReference Include="..\ExtensionMethods\ExtensionMethods.csproj" />
     <ProjectReference Include="..\Linq\Linq.csproj" />
     <ProjectReference Include="..\NullableTypes\NullableTypes.csproj" />
+    <ProjectReference Include="..\Dynamic\Dynamic.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
