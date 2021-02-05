@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
+using System.Threading.Tasks;
 using Generics;
 using Delegates;
 using LambdaExpressions;
@@ -10,13 +12,13 @@ using Linq;
 using NullableTypes;
 using Dynamic;
 using ExceptionHandling;
-using System.IO;
+using AsyncAwait;
 
 namespace UltimateCSharpPart3
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             // Generics();
 
@@ -34,7 +36,9 @@ namespace UltimateCSharpPart3
 
             // Dynamic();
 
-            ExceptionHandling();
+            // ExceptionHandling();
+
+            await AsyncAwait();
         }
 
         static void Generics()
@@ -303,6 +307,22 @@ namespace UltimateCSharpPart3
                 Console.WriteLine($"Sorry, an exception error occurred - {ex.Message}");
                 Console.WriteLine(ex.InnerException.Message);
             }
+        }
+
+        static async Task AsyncAwait()
+        {
+            var asyncAwaitExamples = new AsyncAwaitExamples();
+            await asyncAwaitExamples.DownloadHtmlAsync("https://docs.microsoft.com/en-gb/");
+
+            var html = await asyncAwaitExamples.GetStringAsync("https://docs.microsoft.com/en-gb/");
+            Console.WriteLine(html.Substring(0, 10));
+
+            // If you need, you can postpone the execution of you task
+            var getHtmlTask = asyncAwaitExamples.GetStringAsync("https://docs.microsoft.com/en-gb/");
+            // Do something...
+            Console.WriteLine("Waiting...");
+            var html2 = await getHtmlTask;
+            Console.WriteLine(html2.Substring(0, 10));
         }
     }
 }

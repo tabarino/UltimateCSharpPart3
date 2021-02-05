@@ -10,6 +10,7 @@
     <ProjectReference Include="..\NullableTypes\NullableTypes.csproj" />
     <ProjectReference Include="..\Dynamic\Dynamic.csproj" />
     <ProjectReference Include="..\ExceptionHandling\ExceptionHandling.csproj" />
+    <ProjectReference Include="..\AsyncAwait\AsyncAwait.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
